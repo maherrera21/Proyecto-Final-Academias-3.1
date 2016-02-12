@@ -1,0 +1,223 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Miguel Herrera, Andrea Córdova">
+    <title>Acerca de | IEEDEF </title>
+	
+    
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'datos.views.index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'datos.views.index' %}">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datos estadísticos <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'datos.views.defunciones_fetales' %}">Defunciones Fetales</a></li>
+                                <li><a href="{% url 'datos.views.defunciones_generales' %}">Defunciones Generales</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="active"><a href="{% url 'datos.views.acerca_de' %}">Acerca de</a></li>  
+                        <li><a href="{% url 'datos.views.mapa' %}">Mapa</a></li>
+                                                
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+    <section id="about-us">
+        <div class="container">
+			<div class="center wow fadeInDown">
+				<h2>Acerca de Nosotros</h2>
+				<p class="lead">El Instituto Ecuatoriano de Estadísticas de Defunciones es el órgano rector de la estadística nacional y el encargado de generar las estadísticas oficiales de defunciones en el Ecuador.</p>
+			</div>
+			
+			<!-- about us slider -->
+			<div id="about-slider">
+				<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+				  	<ol class="carousel-indicators visible-xs">
+					    <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+				  	</ol>
+
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="{% static 'images/slider_one.jpg' %}" class="img-responsive" alt=""> 
+					   </div>
+					</div>
+				</div> <!--/#carousel-slider-->
+			</div><!--/#about-slider-->
+			
+			
+			<!-- Our Skill -->
+			<div class="skill-wrap clearfix">
+			
+				<div class="center wow fadeInDown">
+					<h2>Misión</h2>
+					<p class="lead">Coordinar, normar y evaluar la producción de la información estadística oficial proveniente del Sistema Estadístico Nacional, mediante la planificación, ejecución y análisis de operaciones estadísticas oportunas y confiables.</p>
+				</div>
+				<div class="center wow fadeInDown">
+					<h2>Visión</h2>
+					<p class="lead">Ser un referente a nivel nacional e internacional por la calidad, oportunidad e innovación en la producción de información estadística, en la articulación de las entidades del Sistema Estadístico Nacional y en la generación de conocimiento a través de estudios especializados.</p>
+				</div>
+            </div><!--/.our-skill-->
+			
+
+			<!-- our-team -->
+			
+
+
+				<div class="row team-bar">
+					<div class="first-one-arrow hidden-xs">
+						<hr>
+					</div>
+					<div class="first-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-up"></i>
+					</div>
+					<div class="second-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-down"></i>
+					</div>
+					<div class="third-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-up"></i>
+					</div>
+					<div class="fourth-arrow hidden-xs">
+						<hr> <i class="fa fa-angle-down"></i>
+					</div>
+				</div> <!--skill_border-->       
+
+				<div class="team">
+				<div class="center wow fadeInDown">
+					<h2>Equipo de Trabajo</h2>
+				</div>
+
+				<div class="row clearfix">
+					<div class="col-md-4 col-sm-6">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/man1.jpg' %}" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Daniel Sotomayor</h4>
+									<h5>Director Ejecutivo</h5>
+								</div>
+							</div>
+
+							<p style="text-align: justify;" >Tiene un Doctorado en Economía otorgado por la Universidad de Amsterdam, una especialización en Economía del Desarrollo, y amplia experiencia en investigación, indicadores y temas de política social. Se ha desempeñado como Secretario Técnico / Viceministro del Ministerio Coordinador del Desarrollo Social, Coordinador del Sistema Integrado de Indicadores Sociales, así como Experto en Pobreza, Inequidad y Protección Social, en la Unidad de Información y Análisis de la Secretaría Técnica del Frente Social.
+							</p>
+						</div>
+					</div><!--/.col-lg-4 -->
+					
+					
+					<div class="col-md-4 col-sm-6 col-md-offset-2">	
+						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="media">
+								<div class="pull-left">
+									<a href="#"><img class="media-object" src="{% static 'images/team-member.jpg' %}" alt=""></a>
+								</div>
+								<div class="media-body">
+									<h4>Carla Moncayo</h4>
+									<h5>Sudirectora General</h5>
+								</div>
+							</div><!--/.media -->
+							<p style="text-align: justify;" >Nacida en la ciudad de Ambato, es Ingeniera en Administración de Empresas y Negocios, con estudios de post grado en Marketing y en Gerencia Cultural. Vinculada al IEEDEF desde el año 2007, primero como Directora de la Regional del Centro, su administración se caracteriza por generar capacidad en las personas y lograr con ellos los resultados que le son propuestos. En el año 2009 es nombrada Subdirectora General.</p>
+						</div>
+					</div><!--/.col-lg-4 -->					
+				</div> <!--/.row -->
+				</section>
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="10ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Compañía</h3>
+                        <ul>
+                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="#">Trabaje para nosotros</a></li>
+                            <li><a href="#">Conozca nuestro equipo de trabajo</a></li>
+                            <li><a href="#">Términos de uso</a></li>
+                            <li><a href="#">Políticas de privacidad</a></li>
+                            <li><a href="#">Contáctenos</a></li>
+                        </ul>
+                    </div>    
+                </div>
+
+                <div align=center class="col-sm-6 hidden-xs animation animated-item-4">
+                    <div class="slider-img">
+                        <img src="{% static 'images/slider/fondo.png' %}" class="img-responsive" order=0>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>DIRECCIÓN</h3>
+                        <ul>
+                            <li><a href="#">Eduardo Kingman y Gobernación de Mainas</a></li>
+                            <li><a href="#">Loja - Ecuador</a></li>
+                            <li><a href="#">Teléfono: (+593-2) 2232303</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">Miguel Herrera, Andrea Córdova</a>. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+</body>
+</html>

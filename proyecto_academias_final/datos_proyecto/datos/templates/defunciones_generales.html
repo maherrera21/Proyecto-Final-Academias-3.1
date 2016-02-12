@@ -1,0 +1,10 @@
+{% extends "base2.html" %}
+{% block carrusel %}
+<form action="" method='POST'>
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Aceptar" class="btn btn-large btn-primary">
+    <br>
+    <br>
+</form>
+{% endblock %}

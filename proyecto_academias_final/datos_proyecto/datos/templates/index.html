@@ -1,0 +1,251 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Miguel Herrera, Andrea Córdova">
+    <title>Home | IEEDEF </title>
+	
+    
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'datos.views.index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li clase="active"><a href="{% url 'datos.views.index' %}">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Datos estadísticos <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'datos.views.defunciones_fetales' %}">Defunciones Fetales</a></li>
+                                <li><a href="{% url 'datos.views.defunciones_generales' %}">Defunciones Generales</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="{% url 'datos.views.acerca_de' %}">Acerca de</a></li>  
+                        <li><a href="{% url 'datos.views.mapa' %}">Mapa</a></li>
+                                                
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="item active" style="background-image: url({% static 'images/slider/def1.jpg)' %}">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Defunciones Generales y Fetales</h1>
+                                </div>
+                            </div>
+
+                            <div align=center class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{% static 'images/slider/persona1.png' %}" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url({% static 'images/slider/def2.jpg)' %}">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Defunciones Generales</h1>
+                                </div>
+                            </div>
+
+                            <div align=center class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{% static 'images/slider/persona2.png' %}" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url({% static 'images/slider/def3.jpg)' %}">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Defunciones Fetales</h1>
+                                </div>
+                            </div>
+                            <div align=center class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="{% static 'images/slider/persona3.png' %}" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+    
+    <section id="middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInDown">
+                    <div class="skill">
+                        <h2>Datos acerca de defunciones</h2>
+                        <p>A continuación se demuestra una gráfica con los porcentajes de defunciones tanto generales como fetales.</p>
+
+                        <div class="progress-wrap">
+                            <h3>Defunciones Fetales</h3>
+                            <div class="progress">
+                              <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                <span class="bar-width">60%</span>
+                              </div>
+
+                            </div>
+                        </div>
+
+                        <div class="progress-wrap">
+                            <h3>Defunciones Generales</h3>
+                            <div class="progress">
+                              <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                               <span class="bar-width">95%</span>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.row-->
+
+                <div class="col-md-4 col-sm-6 col-md-offset-2"> 
+                        <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                            <p style="text-align: justify;" >Con las Estadísticas de Defunciones (Fetales y Generales) se ofrece información sistemática y continúa respecto de la inscripción de  defunciones. Se da a conocer a los usuarios, las variables más relevantes en este campo, que sirve para la planificación de estrategias socio-económicas del país y proporcionan a los sectores público y privado, uno de los instrumentos básicos para el análisis demográfico.</p>
+                        </div>
+                    </div><!--/.col-lg-4 -->
+
+        </div><!--/.container-->
+    </section><!--/#middle-->
+
+
+
+
+    
+    <section id="conatcat-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="pull-left">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="media-body">
+                            <h2> ¿Tiene alguna pregunta o necesita algún dato personalizado?</h2>
+                            <p>No dude en contactarnos puede hacerlo mediante el número telefónico (+593-2) 2232303, o puede enviarnos un correo a ieedef@ieedef.gob.ec</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->    
+    </section><!--/#conatcat-info-->
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="10ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Compañía</h3>
+                        <ul>
+                            <li><a href="#">Acerca de nosotros</a></li>
+                            <li><a href="#">Trabaje para nosotros</a></li>
+                            <li><a href="#">Conozca nuestro equipo de trabajo</a></li>
+                            <li><a href="#">Términos de uso</a></li>
+                            <li><a href="#">Políticas de privacidad</a></li>
+                            <li><a href="#">Contáctenos</a></li>
+                        </ul>
+                    </div>    
+                </div>
+
+                <div align=center class="col-sm-6 hidden-xs animation animated-item-4">
+                    <div class="slider-img">
+                        <img src="{% static 'images/slider/fondo.png' %}" class="img-responsive" order=0>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>DIRECCIÓN</h3>
+                        <ul>
+                            <li><a href="#">Eduardo Kingman y Gobernación de Mainas</a></li>
+                            <li><a href="#">Loja - Ecuador</a></li>
+                            <li><a href="#">Teléfono: (+593-2) 2232303</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">Miguel Herrera, Andrea Córdova</a>. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+</body>
+</html>

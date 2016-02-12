@@ -1,0 +1,43 @@
+{% extends "base3.html" %}
+{% load staticfiles %}
+{% block section %}
+<br>
+<h1 align="center" aria-expanded="false" tabindex="0">Ubicación de las diversas personas fallecidas en el Ecuador</h1>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp" role="main" aria-expanded="false" tabindex="0" onclick="a()" onkeypress="a()"></script>
+  <style>
+    #map-canvas{
+      height: 550px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script >
+    function initialize() {
+    var myLatlng = new google.maps.LatLng(-2.524406, -78.929772);
+    var mapOptions = {
+      zoom: 7,
+      center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);    
+    {% for personas in animales %}
+      var marcador = new google.maps.LatLng({{personas.latitud}}, {{personas.longitud}});
+      var marker = new google.maps.Marker({
+          position: marcador,
+          map: map,
+          title: '{{personas.edad}}'
+      });
+        google.maps.event.addListener(marker, 'click', function(){
+              var popup = new google.maps.InfoWindow();
+              var note = '<div><h6 style="color:rgb(#000000);">{{personas.edad}}<h6><img src="{{personas.imagen}}" style="width:150px; height:auto; margin-left:10px; border: 1px solid #000000; border-radius:10px;"></div>';
+              popup.setContent(note);
+              popup.open(map, this);
+        })
+    {% endfor %}
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script> 
+
+  <section id="map-canvas"></section>
+{% endblock %}
